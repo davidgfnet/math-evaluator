@@ -71,6 +71,7 @@ int SearchCloseParenthesis(const char * string, int length) {
 		}
 		i++;
 	}
+	return 0;
 }
 // Given a string finds the closer parenthesis but from right to left
 int SearchCloseParenthesisInv(const char * string, int length) {
@@ -83,6 +84,7 @@ int SearchCloseParenthesisInv(const char * string, int length) {
 		}
 		i--;
 	}
+	return 0;
 }
 
 // Creates an expression into ret and returns the last used expression in the list
@@ -189,6 +191,7 @@ struct expression * CreateExpressionFromString_int (const char * string, int len
 			}
 		}
 	}
+	return NULL;
 }
 
 
