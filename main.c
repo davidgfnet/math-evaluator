@@ -33,6 +33,8 @@ int main() {
 	ret = CreateExpressionFromString("(((5*c))/(2*((2-b-1+1))))");
 	printf("%f\n",EvaluateExpression(ret,&vlist[0]));
 	DeleteExpression(ret);
+
+	return 0;
 }
 
 
