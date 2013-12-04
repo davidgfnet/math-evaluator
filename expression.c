@@ -136,7 +136,7 @@ struct expression * CreateExpressionFromString_int (const char * string, int len
 			ret->evalue.child.e2 = CreateExpressionFromString_int(string,i,ret->evalue.child.e1);
 			return CreateExpressionFromString_int(&string[i+1],length-i-1,ret->evalue.child.e2);
 		}
-		if (string[i] == ')') {  // Mantain the parenthesis as a full expression, which we won't treat now
+		if (string[i] == ')') {  // Maintain the parenthesis as a full expression, which we won't treat now
 			j = SearchCloseParenthesisInv(string,i);
 			i = j-1+1;  // Skip the entire block (+1 because next iteration will i--)
 		}
@@ -154,7 +154,7 @@ struct expression * CreateExpressionFromString_int (const char * string, int len
 			ret->evalue.child.e2 = CreateExpressionFromString_int(string,i,ret->evalue.child.e1);
 			return CreateExpressionFromString_int(&string[i+1],length-i-1,ret->evalue.child.e2);
 		}
-		if (string[i] == ')') {  // Mantain the parenthesis as a full expression, which we won't treat now
+		if (string[i] == ')') {  // Maintain the parenthesis as a full expression, which we won't treat now
 			j = SearchCloseParenthesisInv(string,i);
 			i = j-1+1;  // Skip the entire block (+1 because next iteration will i--)
 		}
@@ -162,7 +162,7 @@ struct expression * CreateExpressionFromString_int (const char * string, int len
 
 	// Third round, just search for pow ^
 	for (i = 0; i < length; i++) {
-		if (string[i] == '(') {  // Mantain the parenthesis as a full expression, which we won't treat now
+		if (string[i] == '(') {  // Maintain the parenthesis as a full expression, which we won't treat now
 			j = SearchCloseParenthesis(&string[i+1],length -i -1);
 			i = i+1+ j+1;  // Skip the entire block
 		}
@@ -206,7 +206,7 @@ struct expression * CreateExpressionFromString (const char * string) {  // Initi
 		string++;
 	}
 
-	// Calculate the number of nodes that will be necessari so we cant create a big buffer
+	// Calculate the number of nodes that will be necessary so we cant create a big buffer
 	// This is the sum of the number of operators, literals, functions and variables
 	int i; int num_nodes = 0;
 	for (i = 0; i < len; i++) {
